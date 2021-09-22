@@ -14,13 +14,13 @@ func main() {
 	var evalInput string
 	var validateInput string
 	var errorsFlag bool
-	flag.StringVar(&evalInput, "eval", "", "evaluates a math expression. Expression must be in the form "+
-		"`{\"expression\":\"<a\nsimple math problem>\"}`")
+	flag.StringVar(&evalInput, "eval", "", "evaluates a math expression and returns it's result. Expression must be in the form "+
+		"{<a simple math problem>}. ex. 'What is 5 plus 5'")
 
-	flag.StringVar(&validateInput, "validate", "", "validates a given expression. Request must be in the form "+
-		"`{\"expression\":\"<a\nsimple math problem>\"}`")
-	flag.BoolVar(&errorsFlag, "errors", false, "returns all errors that have occurred during every call. Request must be in the form"+
-		" \"`{\\\"expression\\\":\\\"<a\\nsimple math problem>\\\"}`\")")
+	flag.StringVar(&validateInput, "validate", "", "validates a given expression and returns 'true' is valid or 'false' if invalid. Request must be in the form "+
+		"{<a simple math problem>}. ex. 'What is 5 plus 5'")
+	flag.BoolVar(&errorsFlag, "errors", false, "returns all errors that have occurred during every call. Request must be in the form "+
+		"{<a simple math problem>}. ex. 'What is 5 plus 5'")
 
 	flag.Parse()
 
